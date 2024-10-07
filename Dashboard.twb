@@ -1,0 +1,3388 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0613.1930                               -->
+<workbook original-version='18.1' source-build='2024.2.0 (20242.24.0613.1930)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <_.fcp.DashboardExportButton.true...DashboardExportButton />
+    <_.fcp.IndividualControlFormatting.true...IndividualControlFormatting />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Top N Parameter' datatype='integer' name='[Total (ingredients.csv) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+        <calculation class='tableau' formula='5' />
+        <range granularity='5' max='20' min='5' />
+      </column>
+    </datasource>
+    <datasource caption='Cleaned Data+' inline='true' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Cleaned Data' name='textscan.0lnfnum0dveofc13h91sg17d18xq'>
+            <connection class='textscan' directory='C:/Users/riach/Projects/Recipe_Visualization_Application' filename='Cleaned Data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='Cleaned Data.csv' table='[Cleaned Data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='title' ordinal='1' />
+            <column datatype='real' name='rating' ordinal='2' />
+            <column datatype='real' name='calories' ordinal='3' />
+            <column datatype='real' name='protein' ordinal='4' />
+            <column datatype='real' name='fat' ordinal='5' />
+            <column datatype='real' name='sodium' ordinal='6' />
+            <column datatype='real' name='vegetarian' ordinal='7' />
+            <column datatype='integer' name='const' ordinal='8' />
+            <column datatype='real' name='len_directions' ordinal='9' />
+            <column datatype='real' name='len_ingredients' ordinal='10' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='Cleaned Data.csv' table='[Cleaned Data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='title' ordinal='1' />
+              <column datatype='real' name='rating' ordinal='2' />
+              <column datatype='real' name='calories' ordinal='3' />
+              <column datatype='real' name='protein' ordinal='4' />
+              <column datatype='real' name='fat' ordinal='5' />
+              <column datatype='real' name='sodium' ordinal='6' />
+              <column datatype='real' name='vegetarian' ordinal='7' />
+              <column datatype='integer' name='const' ordinal='8' />
+              <column datatype='real' name='len_directions' ordinal='9' />
+              <column datatype='real' name='len_ingredients' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='cooking_category.csv' table='[cooking_category#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='F1' ordinal='0' />
+              <column datatype='real' name='Total' ordinal='1' />
+              <column datatype='integer' name='const' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='ingredients.csv' table='[ingredients#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='F1' ordinal='0' />
+              <column datatype='real' name='Total' ordinal='1' />
+              <column datatype='integer' name='const' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='meal_time.csv' table='[meal_time#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='F1' ordinal='0' />
+              <column datatype='real' name='Total' ordinal='1' />
+              <column datatype='integer' name='const' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='nutrious_value.csv' table='[nutrious_value#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='F1' ordinal='0' />
+              <column datatype='real' name='Total' ordinal='1' />
+              <column datatype='integer' name='const' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='occasions.csv' table='[occasions#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='F1' ordinal='0' />
+              <column datatype='real' name='Total' ordinal='1' />
+              <column datatype='integer' name='const' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='seasons.csv' table='[seasons#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='F1' ordinal='0' />
+              <column datatype='real' name='Total' ordinal='1' />
+              <column datatype='integer' name='const' ordinal='2' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[F1 (cooking_category.csv)]' value='[cooking_category.csv].[F1]' />
+          <map key='[F1 (ingredients.csv)]' value='[ingredients.csv].[F1]' />
+          <map key='[F1 (meal_time.csv)]' value='[meal_time.csv].[F1]' />
+          <map key='[F1 (nutrious_value.csv)]' value='[nutrious_value.csv].[F1]' />
+          <map key='[F1 (occasions.csv)]' value='[occasions.csv].[F1]' />
+          <map key='[F1 (seasons.csv)]' value='[seasons.csv].[F1]' />
+          <map key='[F1]' value='[Cleaned Data.csv].[F1]' />
+          <map key='[Total (ingredients.csv)]' value='[ingredients.csv].[Total]' />
+          <map key='[Total (meal_time.csv)]' value='[meal_time.csv].[Total]' />
+          <map key='[Total (nutrious_value.csv)]' value='[nutrious_value.csv].[Total]' />
+          <map key='[Total (occasions.csv)]' value='[occasions.csv].[Total]' />
+          <map key='[Total (seasons.csv)]' value='[seasons.csv].[Total]' />
+          <map key='[Total]' value='[cooking_category.csv].[Total]' />
+          <map key='[calories]' value='[Cleaned Data.csv].[calories]' />
+          <map key='[const (cooking_category.csv)]' value='[cooking_category.csv].[const]' />
+          <map key='[const (ingredients.csv)]' value='[ingredients.csv].[const]' />
+          <map key='[const (meal_time.csv)]' value='[meal_time.csv].[const]' />
+          <map key='[const (nutrious_value.csv)]' value='[nutrious_value.csv].[const]' />
+          <map key='[const (occasions.csv)]' value='[occasions.csv].[const]' />
+          <map key='[const (seasons.csv)]' value='[seasons.csv].[const]' />
+          <map key='[const]' value='[Cleaned Data.csv].[const]' />
+          <map key='[fat]' value='[Cleaned Data.csv].[fat]' />
+          <map key='[len_directions]' value='[Cleaned Data.csv].[len_directions]' />
+          <map key='[len_ingredients]' value='[Cleaned Data.csv].[len_ingredients]' />
+          <map key='[protein]' value='[Cleaned Data.csv].[protein]' />
+          <map key='[rating]' value='[Cleaned Data.csv].[rating]' />
+          <map key='[sodium]' value='[Cleaned Data.csv].[sodium]' />
+          <map key='[title]' value='[Cleaned Data.csv].[title]' />
+          <map key='[vegetarian]' value='[Cleaned Data.csv].[vegetarian]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cooking_category.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ingredients.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[meal_time.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[nutrious_value.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[occasions.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[seasons.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[title]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>title</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[rating]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>rating</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calories</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[calories]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>calories</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>protein</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[protein]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>protein</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fat</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[fat]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>fat</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sodium</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sodium]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>sodium</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>vegetarian</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[vegetarian]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>vegetarian</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>const</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[const]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>const</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>len_directions</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[len_directions]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>len_directions</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>len_ingredients</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[len_ingredients]</local-name>
+            <parent-name>[Cleaned Data.csv]</parent-name>
+            <remote-alias>len_ingredients</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1 (cooking_category.csv)]</local-name>
+            <parent-name>[cooking_category.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cooking_category.csv_001589906D3C4BE390A3D4E23AFC5EE4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Total]</local-name>
+            <parent-name>[cooking_category.csv]</parent-name>
+            <remote-alias>Total</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cooking_category.csv_001589906D3C4BE390A3D4E23AFC5EE4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>const</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[const (cooking_category.csv)]</local-name>
+            <parent-name>[cooking_category.csv]</parent-name>
+            <remote-alias>const</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cooking_category.csv_001589906D3C4BE390A3D4E23AFC5EE4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1 (ingredients.csv)]</local-name>
+            <parent-name>[ingredients.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ingredients.csv_1E787A2EF53E487C96077BCFD56E87AE]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Total (ingredients.csv)]</local-name>
+            <parent-name>[ingredients.csv]</parent-name>
+            <remote-alias>Total</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ingredients.csv_1E787A2EF53E487C96077BCFD56E87AE]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>const</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[const (ingredients.csv)]</local-name>
+            <parent-name>[ingredients.csv]</parent-name>
+            <remote-alias>const</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[ingredients.csv_1E787A2EF53E487C96077BCFD56E87AE]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1 (meal_time.csv)]</local-name>
+            <parent-name>[meal_time.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[meal_time.csv_326412B712D8494381FB0FBC2775EC7C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Total (meal_time.csv)]</local-name>
+            <parent-name>[meal_time.csv]</parent-name>
+            <remote-alias>Total</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[meal_time.csv_326412B712D8494381FB0FBC2775EC7C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>const</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[const (meal_time.csv)]</local-name>
+            <parent-name>[meal_time.csv]</parent-name>
+            <remote-alias>const</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[meal_time.csv_326412B712D8494381FB0FBC2775EC7C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1 (nutrious_value.csv)]</local-name>
+            <parent-name>[nutrious_value.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[nutrious_value.csv_D2E42FD88731405C8F0C7236C2F1C457]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Total (nutrious_value.csv)]</local-name>
+            <parent-name>[nutrious_value.csv]</parent-name>
+            <remote-alias>Total</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[nutrious_value.csv_D2E42FD88731405C8F0C7236C2F1C457]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>const</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[const (nutrious_value.csv)]</local-name>
+            <parent-name>[nutrious_value.csv]</parent-name>
+            <remote-alias>const</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[nutrious_value.csv_D2E42FD88731405C8F0C7236C2F1C457]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1 (occasions.csv)]</local-name>
+            <parent-name>[occasions.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[occasions.csv_F0C844C0FF334DCFADAB30036AD1D80E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Total (occasions.csv)]</local-name>
+            <parent-name>[occasions.csv]</parent-name>
+            <remote-alias>Total</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[occasions.csv_F0C844C0FF334DCFADAB30036AD1D80E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>const</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[const (occasions.csv)]</local-name>
+            <parent-name>[occasions.csv]</parent-name>
+            <remote-alias>const</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[occasions.csv_F0C844C0FF334DCFADAB30036AD1D80E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1 (seasons.csv)]</local-name>
+            <parent-name>[seasons.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[seasons.csv_E98678028888408B93F83CAA6AE10A94]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Total (seasons.csv)]</local-name>
+            <parent-name>[seasons.csv]</parent-name>
+            <remote-alias>Total</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[seasons.csv_E98678028888408B93F83CAA6AE10A94]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>const</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[const (seasons.csv)]</local-name>
+            <parent-name>[seasons.csv]</parent-name>
+            <remote-alias>const</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[seasons.csv_E98678028888408B93F83CAA6AE10A94]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Calories (bin)' datatype='integer' name='[Calories (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='-1' formula='[calories]' peg='0' size='28.9' />
+      </column>
+      <column caption='F1 (cooking category.csv)' datatype='string' name='[F1 (cooking_category.csv)]' role='dimension' type='nominal' />
+      <column datatype='string' name='[F1 (ingredients.csv)]' role='dimension' type='nominal' />
+      <column caption='F1 (meal time.csv)' datatype='string' name='[F1 (meal_time.csv)]' role='dimension' type='nominal' />
+      <column caption='F1 (nutrious value.csv)' datatype='string' name='[F1 (nutrious_value.csv)]' role='dimension' type='nominal' />
+      <column datatype='string' name='[F1 (seasons.csv)]' role='dimension' type='nominal' />
+      <column caption='Fat (bin)' datatype='integer' name='[Fat (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='-1' formula='[fat]' peg='0' size='4.1' />
+      </column>
+      <column caption='Protein (bin)' datatype='integer' name='[Protein (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='-2' formula='[protein]' peg='0' size='3.75' />
+      </column>
+      <column datatype='integer' name='[Rating (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='-1' formula='[rating]' peg='0' size='0.473' />
+      </column>
+      <column caption='Sodium (bin)' datatype='integer' name='[Sodium (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='1' formula='[sodium]' peg='0' size='37' />
+      </column>
+      <column datatype='real' name='[Total (ingredients.csv)]' role='measure' type='quantitative' />
+      <column caption='Total (meal time.csv)' datatype='real' name='[Total (meal_time.csv)]' role='measure' type='quantitative' />
+      <column caption='Total (nutrious value.csv)' datatype='real' name='[Total (nutrious_value.csv)]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='Cleaned Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='cooking_category.csv' datatype='table' name='[__tableau_internal_object_id__].[cooking_category.csv_001589906D3C4BE390A3D4E23AFC5EE4]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='ingredients.csv' datatype='table' name='[__tableau_internal_object_id__].[ingredients.csv_1E787A2EF53E487C96077BCFD56E87AE]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='meal_time.csv' datatype='table' name='[__tableau_internal_object_id__].[meal_time.csv_326412B712D8494381FB0FBC2775EC7C]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='nutrious_value.csv' datatype='table' name='[__tableau_internal_object_id__].[nutrious_value.csv_D2E42FD88731405C8F0C7236C2F1C457]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='occasions.csv' datatype='table' name='[__tableau_internal_object_id__].[occasions.csv_F0C844C0FF334DCFADAB30036AD1D80E]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='seasons.csv' datatype='table' name='[__tableau_internal_object_id__].[seasons.csv_E98678028888408B93F83CAA6AE10A94]' role='measure' type='quantitative' />
+      <column caption='Calories' datatype='real' name='[calories]' role='measure' type='quantitative' />
+      <column caption='Const (Cooking Category.Csv)' datatype='integer' name='[const (cooking_category.csv)]' role='measure' type='quantitative' />
+      <column caption='Const (Ingredients.Csv)' datatype='integer' name='[const (ingredients.csv)]' role='measure' type='quantitative' />
+      <column caption='Const (Meal Time.Csv)' datatype='integer' name='[const (meal_time.csv)]' role='measure' type='quantitative' />
+      <column caption='Const (Nutrious Value.Csv)' datatype='integer' name='[const (nutrious_value.csv)]' role='measure' type='quantitative' />
+      <column caption='Const (Occasions.Csv)' datatype='integer' name='[const (occasions.csv)]' role='measure' type='quantitative' />
+      <column caption='Const (Seasons.Csv)' datatype='integer' name='[const (seasons.csv)]' role='measure' type='quantitative' />
+      <column caption='Const' datatype='integer' name='[const]' role='measure' type='quantitative' />
+      <column caption='Fat' datatype='real' name='[fat]' role='measure' type='quantitative' />
+      <column caption='Len Directions' datatype='real' name='[len_directions]' role='measure' type='quantitative' />
+      <column caption='Len Ingredients' datatype='real' name='[len_ingredients]' role='measure' type='quantitative' />
+      <column caption='Protein' datatype='real' name='[protein]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Rating' datatype='real' name='[rating]' role='dimension' type='ordinal' />
+      <column caption='Sodium' datatype='real' name='[sodium]' role='measure' type='quantitative' />
+      <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Vegetarian' datatype='real' name='[vegetarian]' role='dimension' type='ordinal' />
+      <column-instance column='[F1 (meal_time.csv)]' derivation='None' name='[none:F1 (meal_time.csv):nk]' pivot='key' type='nominal' />
+      <column-instance column='[F1 (nutrious_value.csv)]' derivation='None' name='[none:F1 (nutrious_value.csv):nk]' pivot='key' type='nominal' />
+      <column-instance column='[F1 (seasons.csv)]' derivation='None' name='[none:F1 (seasons.csv):nk]' pivot='key' type='nominal' />
+      <group caption='F1 (ingredients.csv) Set' name='[F1 (ingredients.csv) Set]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='[Parameters].[Total (ingredients.csv) Parameter]' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+          <groupfilter direction='DESC' expression='SUM([Total (ingredients.csv)])' function='order' user:ui-marker='order'>
+            <groupfilter function='level-members' level='[F1 (ingredients.csv)]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:F1 (meal_time.csv):nk]' palette='brown_10_0' type='palette'>
+            <map to='#9f3632'>
+              <bucket>&quot;snack&quot;</bucket>
+            </map>
+            <map to='#bc5e3a'>
+              <bucket>&quot;lunch&quot;</bucket>
+            </map>
+            <map to='#d18954'>
+              <bucket>&quot;dinner&quot;</bucket>
+            </map>
+            <map to='#e6b06f'>
+              <bucket>&quot;dessert&quot;</bucket>
+            </map>
+            <map to='#eedbbd'>
+              <bucket>&quot;breakfast&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:F1 (nutrious_value.csv):nk]' type='palette'>
+            <map to='#78aba8'>
+              <bucket>&quot;healthy&quot;</bucket>
+            </map>
+            <map to='#9babb8'>
+              <bucket>&quot;low cholesterol&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;low sugar&quot;</bucket>
+            </map>
+            <map to='#aad7d9'>
+              <bucket>&quot;low fat&quot;</bucket>
+            </map>
+            <map to='#acb1d6'>
+              <bucket>&quot;fat free&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;low/no sugar&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;high fiber&quot;</bucket>
+            </map>
+            <map to='#e9b384'>
+              <bucket>&quot;low carb&quot;</bucket>
+            </map>
+            <map to='#ece5c7'>
+              <bucket>&quot;low cal&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;low sodium&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:F1 (seasons.csv):nk]' palette='summer_10_0' type='palette'>
+            <map to='#8fb202'>
+              <bucket>&quot;fall&quot;</bucket>
+            </map>
+            <map to='#b9ca5d'>
+              <bucket>&quot;spring&quot;</bucket>
+            </map>
+            <map to='#cf3e53'>
+              <bucket>&quot;summer&quot;</bucket>
+            </map>
+            <map to='#f1788d'>
+              <bucket>&quot;winter&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Top N Parameter' datatype='integer' name='[Total (ingredients.csv) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+          <calculation class='tableau' formula='5' />
+          <range granularity='5' max='20' min='5' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Cleaned Data.csv' id='Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92'>
+            <properties context=''>
+              <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='Cleaned Data.csv' table='[Cleaned Data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='title' ordinal='1' />
+                  <column datatype='real' name='rating' ordinal='2' />
+                  <column datatype='real' name='calories' ordinal='3' />
+                  <column datatype='real' name='protein' ordinal='4' />
+                  <column datatype='real' name='fat' ordinal='5' />
+                  <column datatype='real' name='sodium' ordinal='6' />
+                  <column datatype='real' name='vegetarian' ordinal='7' />
+                  <column datatype='integer' name='const' ordinal='8' />
+                  <column datatype='real' name='len_directions' ordinal='9' />
+                  <column datatype='real' name='len_ingredients' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='cooking_category.csv' id='cooking_category.csv_001589906D3C4BE390A3D4E23AFC5EE4'>
+            <properties context=''>
+              <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='cooking_category.csv' table='[cooking_category#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='Total' ordinal='1' />
+                  <column datatype='integer' name='const' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='ingredients.csv' id='ingredients.csv_1E787A2EF53E487C96077BCFD56E87AE'>
+            <properties context=''>
+              <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='ingredients.csv' table='[ingredients#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='Total' ordinal='1' />
+                  <column datatype='integer' name='const' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='meal_time.csv' id='meal_time.csv_326412B712D8494381FB0FBC2775EC7C'>
+            <properties context=''>
+              <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='meal_time.csv' table='[meal_time#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='Total' ordinal='1' />
+                  <column datatype='integer' name='const' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='nutrious_value.csv' id='nutrious_value.csv_D2E42FD88731405C8F0C7236C2F1C457'>
+            <properties context=''>
+              <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='nutrious_value.csv' table='[nutrious_value#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='Total' ordinal='1' />
+                  <column datatype='integer' name='const' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='occasions.csv' id='occasions.csv_F0C844C0FF334DCFADAB30036AD1D80E'>
+            <properties context=''>
+              <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='occasions.csv' table='[occasions#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='Total' ordinal='1' />
+                  <column datatype='integer' name='const' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='seasons.csv' id='seasons.csv_E98678028888408B93F83CAA6AE10A94'>
+            <properties context=''>
+              <relation connection='textscan.0lnfnum0dveofc13h91sg17d18xq' name='seasons.csv' table='[seasons#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='Total' ordinal='1' />
+                  <column datatype='integer' name='const' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[const]' />
+              <expression op='[const (cooking_category.csv)]' />
+            </expression>
+            <first-end-point object-id='Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92' />
+            <second-end-point object-id='cooking_category.csv_001589906D3C4BE390A3D4E23AFC5EE4' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[const]' />
+              <expression op='[const (ingredients.csv)]' />
+            </expression>
+            <first-end-point object-id='Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92' />
+            <second-end-point object-id='ingredients.csv_1E787A2EF53E487C96077BCFD56E87AE' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[const]' />
+              <expression op='[const (meal_time.csv)]' />
+            </expression>
+            <first-end-point object-id='Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92' />
+            <second-end-point object-id='meal_time.csv_326412B712D8494381FB0FBC2775EC7C' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[const]' />
+              <expression op='[const (nutrious_value.csv)]' />
+            </expression>
+            <first-end-point object-id='Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92' />
+            <second-end-point object-id='nutrious_value.csv_D2E42FD88731405C8F0C7236C2F1C457' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[const]' />
+              <expression op='[const (occasions.csv)]' />
+            </expression>
+            <first-end-point object-id='Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92' />
+            <second-end-point object-id='occasions.csv_F0C844C0FF334DCFADAB30036AD1D80E' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[const]' />
+              <expression op='[const (seasons.csv)]' />
+            </expression>
+            <first-end-point object-id='Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92' />
+            <second-end-point object-id='seasons.csv_E98678028888408B93F83CAA6AE10A94' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Box plot Calories'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Calories</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <_.fcp.ObjectModelTableType.false...column caption='Cleaned Data.csv' datatype='integer' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column caption='Calories (bin)' datatype='integer' name='[Calories (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-1' formula='[calories]' peg='0' size='28.9' />
+            </column>
+            <_.fcp.ObjectModelTableType.true...column caption='Cleaned Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' pivot='key' type='quantitative' />
+            <column caption='Calories' datatype='real' name='[calories]' role='measure' type='quantitative' />
+            <column-instance column='[Calories (bin)]' derivation='None' name='[none:Calories (bin):ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <lod column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Calories (bin):ok]' />
+            </encodings>
+            <reference-line axis-column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]</rows>
+        <cols />
+        <show-full-range>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Calories (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{42DA76BD-F991-4ADB-AD17-C26EF0FC0C5C}' />
+    </worksheet>
+    <worksheet name='Box plot Fats'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Fats</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <_.fcp.ObjectModelTableType.false...column caption='Cleaned Data.csv' datatype='integer' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column caption='Fat (bin)' datatype='integer' name='[Fat (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-1' formula='[fat]' peg='0' size='4.1' />
+            </column>
+            <_.fcp.ObjectModelTableType.true...column caption='Cleaned Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' pivot='key' type='quantitative' />
+            <column caption='Fat' datatype='real' name='[fat]' role='measure' type='quantitative' />
+            <column-instance column='[Fat (bin)]' derivation='None' name='[none:Fat (bin):ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <lod column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]' />
+            </encodings>
+            <reference-line axis-column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{2F820D1B-77C7-46FE-8649-A9664E4864F8}' />
+    </worksheet>
+    <worksheet name='Box plot Protein'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Protein</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <_.fcp.ObjectModelTableType.false...column caption='Cleaned Data.csv' datatype='integer' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column caption='Protein (bin)' datatype='integer' name='[Protein (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-2' formula='[protein]' peg='0' size='3.75' />
+            </column>
+            <_.fcp.ObjectModelTableType.true...column caption='Cleaned Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Protein (bin)]' derivation='None' name='[none:Protein (bin):ok]' pivot='key' type='ordinal' />
+            <column caption='Protein' datatype='real' name='[protein]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <lod column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]' />
+            </encodings>
+            <reference-line axis-column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{BC11FA26-B4C2-4377-8B81-6DD88A91618A}' />
+    </worksheet>
+    <worksheet name='Box plot Sodium'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Sodium</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <_.fcp.ObjectModelTableType.false...column caption='Cleaned Data.csv' datatype='integer' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column caption='Sodium (bin)' datatype='integer' name='[Sodium (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='1' formula='[sodium]' peg='0' size='37' />
+            </column>
+            <_.fcp.ObjectModelTableType.true...column caption='Cleaned Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sodium (bin)]' derivation='None' name='[none:Sodium (bin):ok]' pivot='key' type='ordinal' />
+            <column caption='Sodium' datatype='real' name='[sodium]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <lod column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]' />
+            </encodings>
+            <reference-line axis-column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{2178BA71-61E7-4532-A8B8-0C69AB93EF7F}' />
+    </worksheet>
+    <worksheet name='Dist of Ratings'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Rating Distribution</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <column datatype='integer' name='[Rating (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='-1' formula='[rating]' peg='0' size='0.473' />
+            </column>
+            <column-instance column='[rating]' derivation='Count' name='[cnt:rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Rating (bin)]' derivation='None' name='[none:Rating (bin):qk]' pivot='key' type='quantitative' />
+            <column aggregation='Sum' caption='Rating' datatype='real' name='[rating]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[cnt:rating:qk]' scope='rows' value='false' />
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Rating (bin):qk]' scope='cols' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='font-size' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Rating (bin):qk]' value='7' />
+            <format attr='font-weight' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Rating (bin):qk]' value='bold' />
+            <format attr='font-family' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Rating (bin):qk]' value='Tableau Medium' />
+            <format attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Rating (bin):qk]' value='#d4d4d4' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-width' data-class='total' scope='rows' value='0' />
+            <format attr='border-style' data-class='total' scope='rows' value='none' />
+            <format attr='border-width' data-class='total' scope='cols' value='0' />
+            <format attr='border-style' data-class='total' scope='cols' value='none' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' scope='rows' value='0' />
+            <format attr='border-style' data-class='total' scope='rows' value='none' />
+            <format attr='border-width' data-class='total' scope='cols' value='0' />
+            <format attr='border-style' data-class='total' scope='cols' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <encodings>
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Rating (bin):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#9bb0c1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[cnt:rating:qk]</rows>
+        <cols>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Rating (bin):qk]</cols>
+        <show-full-range>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Rating (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{37D2D88A-0D56-4EE0-91D9-7C33D7ACE88F}' />
+    </worksheet>
+    <worksheet name='Meal time'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Meal Time</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <column caption='0' datatype='integer' name='[Calculation_3296916403282284545]' role='measure' type='quantitative' user:unnamed='Sheet 10'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column caption='0' datatype='integer' name='[Calculation_3296916403282305027]' role='measure' type='quantitative' user:unnamed='Sheet 10'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column caption='F1 (meal time.csv)' datatype='string' name='[F1 (meal_time.csv)]' role='dimension' type='nominal' />
+            <column caption='Total (meal time.csv)' datatype='real' name='[Total (meal_time.csv)]' role='measure' type='quantitative' />
+            <column caption='Total (nutrious value.csv)' datatype='real' name='[Total (nutrious_value.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[F1 (meal_time.csv)]' derivation='None' name='[none:F1 (meal_time.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Total (meal_time.csv)]' derivation='Sum' name='[pcto:sum:Total (meal_time.csv):qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_3296916403282284545]' derivation='Sum' name='[sum:Calculation_3296916403282284545:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_3296916403282305027]' derivation='Sum' name='[sum:Calculation_3296916403282305027:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Total (meal_time.csv)]' derivation='Sum' name='[sum:Total (meal_time.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Total (nutrious_value.csv)]' derivation='Sum' name='[sum:Total (nutrious_value.csv):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403282305027:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403282284545:qk]' scope='rows' value='false' />
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403282305027:qk]' scope='rows' value='false' />
+            <format attr='tick-color' scope='rows' value='#00000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='0' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403282284545:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (meal_time.csv):nk]' />
+              <wedge-size column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (meal_time.csv):qk]' />
+              <size column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (meal_time.csv):qk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (meal_time.csv):nk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total (meal_time.csv):qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#d4d4d4' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (meal_time.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#d4d4d4' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total (meal_time.csv):qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.4172928333282471' />
+                <format attr='mark-transparency' value='206' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403282305027:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (nutrious_value.csv):qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'>&lt;</run>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (nutrious_value.csv):qk]</run>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='0.93353593349456787' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-color' value='#203648' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403282284545:qk] + [federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403282305027:qk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{4CF978C5-3896-4332-9E42-77566E1AF278}' />
+    </worksheet>
+    <worksheet name='Nutrious Value'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Nutrious Recipes</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <column caption='F1 (nutrious value.csv)' datatype='string' name='[F1 (nutrious_value.csv)]' role='dimension' type='nominal' />
+            <column caption='Total (nutrious value.csv)' datatype='real' name='[Total (nutrious_value.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[F1 (nutrious_value.csv)]' derivation='None' name='[none:F1 (nutrious_value.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Total (nutrious_value.csv)]' derivation='Sum' name='[pcto:sum:Total (nutrious_value.csv):qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Total (nutrious_value.csv)]' derivation='Sum' name='[sum:Total (nutrious_value.csv):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (nutrious_value.csv):qk]' value='7' />
+            <format attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (nutrious_value.csv):qk]' value='#d4d4d4' />
+            <format attr='font-weight' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (nutrious_value.csv):qk]' value='bold' />
+            <format attr='font-family' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (nutrious_value.csv):qk]' value='Tableau Medium' />
+            <format attr='font-size' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]' value='7' />
+            <format attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]' value='#d4d4d4' />
+            <format attr='font-family' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]' value='Tableau Medium' />
+            <format attr='font-weight' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]' value='bold' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (nutrious_value.csv):qk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total (nutrious_value.csv):qk]' />
+              <color column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total (nutrious_value.csv):qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-transparency' value='216' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C224CD05-FEC6-49F3-A252-02F211845D39}' />
+    </worksheet>
+    <worksheet name='Occasion dist'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Occasional Recipe</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <column datatype='string' name='[F1 (occasions.csv)]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Total (occasions.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[F1 (occasions.csv)]' derivation='None' name='[none:F1 (occasions.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Total (occasions.csv)]' derivation='Sum' name='[pcto:sum:Total (occasions.csv):qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Total (occasions.csv)]' derivation='Sum' name='[sum:Total (occasions.csv):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (occasions.csv):qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#d3dae0</color>
+                <color>#b8c4cf</color>
+                <color>#9eb0be</color>
+                <color>#869cad</color>
+                <color>#71889c</color>
+                <color>#5d768b</color>
+                <color>#4a657a</color>
+                <color>#3a5469</color>
+                <color>#2c4458</color>
+                <color>#203648</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#ffffff' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (occasions.csv):qk]' />
+              <color column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (occasions.csv):qk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (occasions.csv):nk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total (occasions.csv):qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (occasions.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total (occasions.csv):qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{AD777B2C-B23E-44A9-8B1C-034BEFE064E2}' />
+    </worksheet>
+    <worksheet name='Preparation Time'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Preparation Time</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <column caption='0' datatype='integer' name='[Calculation_3296916403283730437]' role='measure' type='quantitative' user:unnamed='Sheet 13'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column caption='0' datatype='integer' name='[Calculation_3296916403283750919]' role='measure' type='quantitative' user:unnamed='Sheet 13'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column caption='F1 (cooking category.csv)' datatype='string' name='[F1 (cooking_category.csv)]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Total]' role='measure' type='quantitative' />
+            <column-instance column='[F1 (cooking_category.csv)]' derivation='None' name='[none:F1 (cooking_category.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Total]' derivation='Sum' name='[pcto:sum:Total:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_3296916403283730437]' derivation='Sum' name='[sum:Calculation_3296916403283730437:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_3296916403283750919]' derivation='Sum' name='[sum:Calculation_3296916403283750919:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Total]' derivation='Sum' name='[sum:Total:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283750919:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283730437:qk]' scope='rows' value='false' />
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283750919:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283730437:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (cooking_category.csv):nk]' />
+              <wedge-size column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total:qk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (cooking_category.csv):nk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (cooking_category.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.4612706899642944' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283750919:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'>&lt;</run>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total:qk]</run>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-color' value='#203648' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283730437:qk] + [federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283750919:qk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{EA25132C-EA87-4398-A262-9EF37957882E}' />
+    </worksheet>
+    <worksheet name='Seasonal Recipes'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Seasonal Recipes</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <column caption='0' datatype='integer' name='[Calculation_3296916403283730437]' role='measure' type='quantitative' user:unnamed='Sheet 13'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column caption='0' datatype='integer' name='[Calculation_3296916403283750919]' role='measure' type='quantitative' user:unnamed='Sheet 13'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column datatype='string' name='[F1 (seasons.csv)]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Total (seasons.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[F1 (seasons.csv)]' derivation='None' name='[none:F1 (seasons.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Total (seasons.csv)]' derivation='Sum' name='[pcto:sum:Total (seasons.csv):qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Calculation_3296916403283730437]' derivation='Sum' name='[sum:Calculation_3296916403283730437:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_3296916403283750919]' derivation='Sum' name='[sum:Calculation_3296916403283750919:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Total (seasons.csv)]' derivation='Sum' name='[sum:Total (seasons.csv):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283750919:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283730437:qk]' scope='rows' value='false' />
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283750919:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283730437:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (seasons.csv):nk]' />
+              <wedge-size column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (seasons.csv):qk]' />
+              <size column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (seasons.csv):qk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (seasons.csv):nk]' />
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total (seasons.csv):qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (seasons.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#e6e6e6' fontname='Tableau Medium' fontsize='7'><![CDATA[<[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[pcto:sum:Total (seasons.csv):qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.3073480129241943' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-transparency' value='206' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283750919:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (seasons.csv):qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontcolor='#d4d4d4' fontname='Tableau Medium' fontsize='7'>&lt;</run>
+                <run bold='true' fontcolor='#d4d4d4' fontname='Tableau Medium' fontsize='7'>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (seasons.csv):qk]</run>
+                <run bold='true' fontcolor='#d4d4d4' fontname='Tableau Medium' fontsize='7'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.84558010101318359' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#203648' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283730437:qk] + [federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Calculation_3296916403283750919:qk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{280C813C-EA8D-49E0-9577-7EF370A48D12}' />
+    </worksheet>
+    <worksheet name='Top ingredigents'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>TOP &lt;</run>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>[Parameters].[Total (ingredients.csv) Parameter]</run>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>&gt; INGREDIENTS</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Top N Parameter' datatype='integer' name='[Total (ingredients.csv) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+              <calculation class='tableau' formula='5' />
+              <range granularity='5' max='20' min='5' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <column datatype='string' name='[F1 (ingredients.csv)]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Total (ingredients.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[Total (ingredients.csv)]' derivation='Sum' name='[sum:Total (ingredients.csv):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[F1 (ingredients.csv) Set]' />
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[F1 (ingredients.csv) Set]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (ingredients.csv):qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[F1 (ingredients.csv) Set]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (ingredients.csv):qk]' scope='cols' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[F1 (ingredients.csv) Set]' value='#d4d4d4' />
+            <format attr='font-family' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[F1 (ingredients.csv) Set]' value='Tableau Medium' />
+            <format attr='font-size' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[F1 (ingredients.csv) Set]' value='7' />
+            <format attr='font-weight' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[F1 (ingredients.csv) Set]' value='bold' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (ingredients.csv):qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#e7eaec</color>
+                <color>#dee3e7</color>
+                <color>#d5dce2</color>
+                <color>#ccd5dd</color>
+                <color>#c3cfd9</color>
+                <color>#bbc8d4</color>
+                <color>#b2c2cf</color>
+                <color>#aabcca</color>
+                <color>#a2b6c5</color>
+                <color>#9bb0c1</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#9bb0c1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[F1 (ingredients.csv) Set]</rows>
+        <cols>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (ingredients.csv):qk]</cols>
+      </table>
+      <simple-id uuid='{74AB370E-FB7F-4D0D-831B-40C6E2D12115}' />
+    </worksheet>
+    <worksheet name='dist of Fat'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Fat Distribution</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <_.fcp.ObjectModelTableType.false...column caption='Cleaned Data.csv' datatype='integer' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column caption='Fat (bin)' datatype='integer' name='[Fat (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-1' formula='[fat]' peg='0' size='4.1' />
+            </column>
+            <_.fcp.ObjectModelTableType.true...column caption='Cleaned Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' pivot='key' type='quantitative' />
+            <column caption='Fat' datatype='real' name='[fat]' role='measure' type='quantitative' />
+            <column-instance column='[Fat (bin)]' derivation='None' name='[none:Fat (bin):ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' scope='rows' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]' value='7' />
+            <format attr='font-family' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]' value='Tableau Medium' />
+            <format attr='font-weight' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]' value='bold' />
+            <format attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]' value='#d4d4d4' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='1.9010497331619263' />
+                <format attr='mark-color' value='#9bb0c1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]</rows>
+        <cols>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Fat (bin)]</column>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Protein (bin)]</column>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Sodium (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{0EE85E80-120E-4B3B-8868-B02A3D36FFF7}' />
+    </worksheet>
+    <worksheet name='dist of Sodium'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Sodium Distribution</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <_.fcp.ObjectModelTableType.false...column caption='Cleaned Data.csv' datatype='integer' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column caption='Sodium (bin)' datatype='integer' name='[Sodium (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='1' formula='[sodium]' peg='0' size='37' />
+            </column>
+            <_.fcp.ObjectModelTableType.true...column caption='Cleaned Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sodium (bin)]' derivation='None' name='[none:Sodium (bin):ok]' pivot='key' type='ordinal' />
+            <column caption='Sodium' datatype='real' name='[sodium]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' scope='rows' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]' value='7' />
+            <format attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]' value='#d4d4d4' />
+            <format attr='font-weight' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]' value='bold' />
+            <format attr='font-family' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]' value='Tableau Medium' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='1.9010497331619263' />
+                <format attr='mark-color' value='#9bb0c1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]</rows>
+        <cols>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Fat (bin)]</column>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Protein (bin)]</column>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Sodium (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{7C9A56DA-E2BA-403D-8B82-C36A53076F72}' />
+    </worksheet>
+    <worksheet name='dist of calories'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Calories Distribution</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <_.fcp.ObjectModelTableType.false...column caption='Cleaned Data.csv' datatype='integer' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column caption='Calories (bin)' datatype='integer' name='[Calories (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-1' formula='[calories]' peg='0' size='28.9' />
+            </column>
+            <_.fcp.ObjectModelTableType.true...column caption='Cleaned Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' pivot='key' type='quantitative' />
+            <column caption='Calories' datatype='real' name='[calories]' role='measure' type='quantitative' />
+            <column-instance column='[Calories (bin)]' derivation='None' name='[none:Calories (bin):ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' scope='rows' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Calories (bin):ok]' value='7' />
+            <format attr='font-weight' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Calories (bin):ok]' value='bold' />
+            <format attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Calories (bin):ok]' value='#d4d4d4' />
+            <format attr='font-family' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Calories (bin):ok]' value='Tableau Medium' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='1.9010497331619263' />
+                <format attr='mark-color' value='#9bb0c1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]</rows>
+        <cols>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Calories (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Fat (bin)]</column>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Protein (bin)]</column>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Sodium (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{67825342-CA9B-4191-9810-76EFB5CB75C0}' />
+    </worksheet>
+    <worksheet name='dist of protein'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#e6e6e6' fontname='Benton Sans SemiDemi' fontsize='7'>Protein Distribution</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Cleaned Data+' name='federated.0qbjpbc0f8ndys1a0ll361mz0yxk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qbjpbc0f8ndys1a0ll361mz0yxk'>
+            <_.fcp.ObjectModelTableType.false...column caption='Cleaned Data.csv' datatype='integer' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column caption='Protein (bin)' datatype='integer' name='[Protein (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-2' formula='[protein]' peg='0' size='3.75' />
+            </column>
+            <_.fcp.ObjectModelTableType.true...column caption='Cleaned Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Protein (bin)]' derivation='None' name='[none:Protein (bin):ok]' pivot='key' type='ordinal' />
+            <column caption='Protein' datatype='real' name='[protein]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]' scope='rows' value='false' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]' value='7' />
+            <format attr='font-family' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]' value='Tableau Medium' />
+            <format attr='color' field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]' value='#e6e6e6' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#203648' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='1.9010497331619263' />
+                <format attr='mark-color' value='#9bb0c1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[__tableau_internal_object_id__].[cnt:Cleaned Data.csv_8B7D4B420ED04F4A937CE6C338417E92:qk]</rows>
+        <cols>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Fat (bin)]</column>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Protein (bin)]</column>
+          <column>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[Sodium (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{18169219-E678-4981-A5B0-FCACAED7DB37}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style>
+        <_.fcp.IndividualControlFormatting.true...style-rule element='parameter-ctrl'>
+          <_.fcp.IndividualControlFormatting.true...format attr='font-size' field='[Parameters].[Total (ingredients.csv) Parameter]' value='7' />
+          <_.fcp.IndividualControlFormatting.true...format attr='background-color' field='[Parameters].[Total (ingredients.csv) Parameter]' value='#203648' />
+          <_.fcp.IndividualControlFormatting.true...format attr='border-width' field='[Parameters].[Total (ingredients.csv) Parameter]' value='0' />
+          <_.fcp.IndividualControlFormatting.true...format attr='border-style' field='[Parameters].[Total (ingredients.csv) Parameter]' value='none' />
+        </_.fcp.IndividualControlFormatting.true...style-rule>
+        <_.fcp.IndividualControlFormatting.true...style-rule element='parameter-ctrl-title'>
+          <_.fcp.IndividualControlFormatting.true...format attr='font-weight' field='[Parameters].[Total (ingredients.csv) Parameter]' value='bold' />
+          <_.fcp.IndividualControlFormatting.true...format attr='font-size' field='[Parameters].[Total (ingredients.csv) Parameter]' value='8' />
+        </_.fcp.IndividualControlFormatting.true...style-rule>
+      </style>
+      <size maxheight='1200' maxwidth='1550' minheight='1200' minwidth='1550' preset-index='17' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Top N Parameter' datatype='integer' name='[Total (ingredients.csv) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+          <calculation class='tableau' formula='5' />
+          <range granularity='5' max='20' min='5' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98666' id='32' param='horz' type-v2='layout-flow' w='98968' x='516' y='667'>
+            <zone h='98666' id='29' param='horz' type-v2='layout-flow' w='98968' x='516' y='667'>
+              <zone h='98666' id='26' param='horz' type-v2='layout-flow' w='98968' x='516' y='667'>
+                <zone h='98666' id='24' type-v2='layout-basic' w='98968' x='516' y='667'>
+                  <zone h='98666' id='22' param='horz' type-v2='layout-flow' w='98968' x='516' y='667'>
+                    <zone h='98666' id='19' param='horz' type-v2='layout-flow' w='98968' x='516' y='667'>
+                      <zone h='98666' id='9' param='horz' type-v2='layout-flow' w='98968' x='516' y='667'>
+                        <zone h='98666' id='7' type-v2='layout-basic' w='98968' x='516' y='667'>
+                          <zone h='98666' id='3' is-scaled='1' param='C:/Users/riach/Projects/Recipe_Visualization_Application/bg2.png' type-v2='bitmap' w='98968' x='516' y='667'>
+                            <zone-style>
+                              <format attr='border-color' value='#000000' />
+                              <format attr='border-style' value='none' />
+                              <format attr='border-width' value='0' />
+                              <format attr='margin' value='4' />
+                            </zone-style>
+                          </zone>
+                        </zone>
+                      </zone>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='5000' id='5' type-v2='text' w='98000' x='968' y='917'>
+          <formatted-text>
+            <run bold='true' fontcolor='#ffffff' fontname='Bahnschrift SemiBold' fontsize='15'>EPIRECIPES DASHBOARD</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='padding' value='13' />
+            <format attr='background-color' value='#203648' />
+          </zone-style>
+        </zone>
+        <zone h='22417' id='6' name='Top ingredigents' w='31548' x='1419' y='10083' />
+        <zone h='2667' id='11' mode='slider' param='[Parameters].[Total (ingredients.csv) Parameter]' type-v2='paramctrl' w='31677' x='1419' y='6667' />
+        <zone h='26000' id='12' name='dist of protein' w='23484' x='1548' y='33250' />
+        <zone h='26083' id='13' name='dist of Fat' w='24323' x='25484' y='33333' />
+        <zone h='26083' id='14' name='dist of Sodium' w='23613' x='50194' y='33333' />
+        <zone h='25750' id='15' name='Dist of Ratings' w='33226' x='65290' y='6667' />
+        <zone h='26167' id='16' name='dist of calories' w='24065' x='74387' y='33167' />
+        <zone h='18083' id='17' name='Meal time' w='31161' x='1613' y='60167' />
+        <zone h='18250' id='20' name='Seasonal Recipes' w='31419' x='33548' y='60083' />
+        <zone h='18250' id='23' name='Preparation Time' w='32710' x='65806' y='60083' />
+        <zone h='19167' id='27' name='Occasion dist' w='96839' x='1613' y='78833' />
+        <zone h='25917' id='30' name='Nutrious Value' w='31226' x='33548' y='6500' />
+        <zone h='4333' id='35' type-v2='dashboard-object' w='5355' x='93161' y='1333'>
+          <button _.fcp.DashboardExportButton.true...button-click-action-metadata='pdf' action=''>
+            <_.fcp.DashboardExportButton.true...export-button-action>tabdoc:abstract-dashboard-button-export-wrapper dashboard-button-export-type=&quot;pdf&quot; dashboarddoc-id=&quot;{433CA68D-2829-4027-BEB3-8F55F87E67DA}&quot;</_.fcp.DashboardExportButton.true...export-button-action>
+            <button-visual-state>
+              <image-path>C:/Users/riach/Projects/Recipe_Visualization_Application/download (1).png</image-path>
+            </button-visual-state>
+          </button>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='padding' value='6' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='3450' minheight='3450' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='37' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98666' id='36' param='vert' type-v2='layout-flow' w='98968' x='516' y='667'>
+                <zone fixed-size='280' h='98666' id='3' is-fixed='true' is-scaled='1' param='C:/Users/riach/Projects/Recipe_Visualization_Application/bg2.png' type-v2='bitmap' w='98968' x='516' y='667'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='5000' id='5' type-v2='text' w='98000' x='968' y='917'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#ffffff' fontname='Bahnschrift SemiBold' fontsize='15'>EPIRECIPES DASHBOARD</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#203648' />
+                  </zone-style>
+                </zone>
+                <zone h='4333' id='35' type-v2='dashboard-object' w='5355' x='93161' y='1333'>
+                  <button _.fcp.DashboardExportButton.true...button-click-action-metadata='pdf' action=''>
+                    <_.fcp.DashboardExportButton.true...export-button-action>tabdoc:abstract-dashboard-button-export-wrapper dashboard-button-export-type=&quot;pdf&quot; dashboarddoc-id=&quot;{433CA68D-2829-4027-BEB3-8F55F87E67DA}&quot;</_.fcp.DashboardExportButton.true...export-button-action>
+                    <button-visual-state>
+                      <image-path>C:/Users/riach/Projects/Recipe_Visualization_Application/download (1).png</image-path>
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='25917' id='30' is-fixed='true' name='Nutrious Value' w='31226' x='33548' y='6500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='2667' id='11' mode='slider' param='[Parameters].[Total (ingredients.csv) Parameter]' type-v2='paramctrl' w='31677' x='1419' y='6667'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='25750' id='15' is-fixed='true' name='Dist of Ratings' w='33226' x='65290' y='6667'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='269' h='22417' id='6' is-fixed='true' name='Top ingredigents' w='31548' x='1419' y='10083'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='26167' id='16' is-fixed='true' name='dist of calories' w='24065' x='74387' y='33167'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='26000' id='12' is-fixed='true' name='dist of protein' w='23484' x='1548' y='33250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='26083' id='13' is-fixed='true' name='dist of Fat' w='24323' x='25484' y='33333'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='26083' id='14' is-fixed='true' name='dist of Sodium' w='23613' x='50194' y='33333'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='219' h='18250' id='20' is-fixed='true' name='Seasonal Recipes' w='31419' x='33548' y='60083'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='219' h='18250' id='23' is-fixed='true' name='Preparation Time' w='32710' x='65806' y='60083'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='217' h='18083' id='17' is-fixed='true' name='Meal time' w='31161' x='1613' y='60167'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='230' h='19167' id='27' is-fixed='true' name='Occasion dist' w='96839' x='1613' y='78833'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{433CA68D-2829-4027-BEB3-8F55F87E67DA}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' name='Box plot Fats'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{39A98B92-7E4F-4C79-982D-692D4552BF0E}' />
+    </window>
+    <window class='worksheet' name='Box plot Protein'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{3DAD694D-F2B8-4EB5-B6DA-EB8CB0188DC0}' />
+    </window>
+    <window class='worksheet' name='Box plot Sodium'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7D1E5E2E-3AC2-4414-9336-6ADD566068B3}' />
+    </window>
+    <window class='worksheet' name='Box plot Calories'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Calories (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6204CD5E-135F-42F1-9920-D90BC5559C04}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Dist of Ratings'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Meal time'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (meal_time.csv):nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Nutrious Value'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Occasion dist'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Preparation Time'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (cooking_category.csv):nk]'>
+            <color-one-way>
+              <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (cooking_category.csv):nk]</field>
+            </color-one-way>
+            <bucket-selection>
+              <bucket>&quot;quick and healthy&quot;</bucket>
+            </bucket-selection>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Seasonal Recipes'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (seasons.csv):nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Top ingredigents'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='dist of Fat'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='dist of Sodium'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='dist of calories'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='dist of protein'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{24F0FADB-1EC8-4D6F-A01E-9F10FA90DB65}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Dist of Ratings'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Rating (bin):qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{036FBE90-9E1E-4194-AFF3-5044305BF69C}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Meal time'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (meal_time.csv):nk]' type='color' />
+            <card pane-specification-id='1' param='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (meal_time.csv):qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (meal_time.csv):nk]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:rating:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B3B80DA3-315E-4FEB-8D2B-76228805C334}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Nutrious Value'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9BFEDB7C-5B95-4242-9493-C73F6F365AE1}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Occasion dist'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (occasions.csv):qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (occasions.csv):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AB168598-87FC-4A31-A50A-5E38127D1CD6}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Preparation Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (cooking_category.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (cooking_category.csv):nk]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (seasons.csv):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A46D6087-E518-426C-883E-9EBC0A7C606E}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Seasonal Recipes'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (seasons.csv):nk]' type='color' />
+            <card pane-specification-id='1' param='[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (seasons.csv):qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (seasons.csv):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7215D033-DEF0-4FE1-88E8-0DD3FAC332BC}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Top ingredigents'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Total (ingredients.csv) Parameter]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[F1 (ingredients.csv) Set]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (cooking_category.csv):nk]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (ingredients.csv):nk]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:F1 (nutrious_value.csv):nk]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:rating:ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:vegetarian:ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:Total (ingredients.csv):qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8E26C184-C46F-4337-8D8F-B914AB8B1049}' />
+    </window>
+    <window class='worksheet' hidden='true' name='dist of Fat'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:rating:ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:title:nk]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:rating:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9DE3E816-87BF-4E3A-A8F1-0EE1023ACFAE}' />
+    </window>
+    <window class='worksheet' hidden='true' name='dist of Sodium'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:rating:ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:title:nk]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:rating:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7CD0767F-1682-432B-95FB-0BD4B174AB7E}' />
+    </window>
+    <window class='worksheet' hidden='true' name='dist of calories'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Calories (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:rating:ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:title:nk]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:rating:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{C333241D-1149-4CE6-8802-074C89725460}' />
+    </window>
+    <window class='worksheet' hidden='true' name='dist of protein'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Fat (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Protein (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:Sodium (bin):ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:rating:ok]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[none:title:nk]</field>
+            <field>[federated.0qbjpbc0f8ndys1a0ll361mz0yxk].[sum:rating:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AEFADDA2-766D-486E-BC0E-4076EBE55380}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Box plot Calories' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACmklEQVR4nO3cMYoiURhG0deDbsD9L6hDV6CJUQvSSA8aiDXZZBMOr6h7zgq+5MJfT/Bj
+      WZZlQNSv2QNgpr8BvN/vmTtgCgGQ5gQiTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAm
+      ANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIg
+      TQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIE
+      QJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCk
+      CYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoA
+      SBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0
+      AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMA
+      aQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgbTd7AP92u93G
+      /X6fPWPTBLBi1+t1nM/n2TM27WNZlmWMMV6v19jt9ECLbwDSBECaAEgTAGkCIE0ApHn3XLHT
+      6TQul8vsGZsmgBU7HA5jv9/PnrFpTiDSBECaAEgTAGkCIE0ApAmANAGQ5oewFfv98zOuX1+z
+      Z2yaAFbs8XyO7+/v2TM2zQlEmgBIEwBpAiBNAKR5BVqx5+PhFeg/88dYpDmBSBMAaQIgzdG/
+      Yp+fn+N4PM6esWk+gklzApEmANL+ALbPRsuMsid8AAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Box plot Fats' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACuElEQVR4nO3cwWriUACG0Wt1uvX9X1Cp6KZVZIo0s5vdLIcb8p3zBD+BD24Skt2yLMuA
+      qLfZA2CmvwH8/PzM3AFTCIA0RyDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0A
+      pAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECa
+      AEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmA
+      NAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgT
+      AGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQ
+      JgDSBECaAEgTAGkCIE0ApAmAtMPsAfzbx8fHuF6vs2dsmgBW7PF4jNvtNnvGpu2WZVnGGOP1
+      eo3DQQ+0uAcgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCk
+      CYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZDmb7gr9ng8xvP5nD1j0wSwYtfrdZxOp9kzNk0A
+      K3Y8Hsfbm1Pq/+TqkiYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQB
+      kCYA0nwSuWJfn5/jfD7PnrFpAlix39/f436/z56xaY5ApAmANAGQJgDSBECaAEgTAGkCIE0A
+      pAmANAGQJgDSBECaAEgTAGm+B1ix/X4/fr2/z56xabtlWZYxxni9XuNw0AMtjkCkCYA0AZAm
+      ANIEQJrHPit2uVzG7XabPWPTBLBi9/t9XC6X2TM2zXsA0twDkCYA0gRAmgBIEwBpAiDtD4Zl
+      TZWpHzZUAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Box plot Protein' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACpElEQVR4nO3YMYoiURhG0aeUiftflKFr6IYeEIRGjESsySYzHJ7UPWcFX3Krft5uXdd1
+      QNR+9gCY6V8Ar9dr5g6YQgCkOYFIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQB
+      kCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBp
+      AiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA
+      0gRAmgBIEwBpAiBNAKQJgLRl9gDeO51O43w+z56xabt1Xdcxxng+n2NZ9ECLE4g0AZAmANIE
+      QJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCk
+      CYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoA
+      SBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZC2zB7Ae5fLZVyv19kzNk0AH2y3
+      24393k/6fxLABzscDuN4PM6esWk+L6QJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRA
+      mgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJ
+      gDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRA2jJ7AO89Ho9xv99nz9g0AXyw2+02/vz8
+      zJ6xaU4g0gRAmhPog/3+/o6v7+/ZMzZtt67rOsYYz+dzLIseaHECkSYA0gRAmgBIEwBpnn0+
+      2Ol0GufzefaMTfMMSpoTiDQBkCYA0gRAmgBIEwBpfwFQeUCHpt045AAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Box plot Sodium' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACo0lEQVR4nO3dPW7iUBiG0ZsREhV19r8bSlJkARkKOjoa/pxuuqmv5eecFbwFj/TJyPLH
+      sizLgKg/swfATP8CeL/fM3fAFAIgzQlEmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBN
+      AKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRA
+      mgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJ
+      gDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBI
+      EwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQB
+      kCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBp
+      AiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA
+      0gRAmgBIEwBpAiBNAKQJgDQBkCYA0nazB/B/x+NxnE6n2TM27WNZlmWMMZ7P59jt9ECLE4g0
+      AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJq34Ffs
+      fD6Py+Uye8amCWDFDofD7Amb5wQiTQCkCYA0AZAmANIEQJoASBMAaQIgzT/BK/Z+v8fr9Zo9
+      Y9MEsGLX63X8/fmZPWPTnECkCYA0J9CK3e/3cbvdZs/YNAGs2Ofn59jv97NnbJqvRJLmF79i
+      j8djPJ/P2TM2TQAr9vX1Nb6/v2fP2DQnEGkeg5L2C842Rx21uPHEAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      AygF8AeJdvgWAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
