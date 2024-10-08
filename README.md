@@ -44,14 +44,12 @@ The **EpiRecipes dataset** consists of over 20,000 recipes along with their rati
 ```
 Recipe-Analysis/
 │
-├── data/
-│   └── epi_r.csv                # Main dataset (cleaned and preprocessed)
-│   └── full_format_recipes.json  # Original dataset with detailed recipe info
+├── epi_r.csv                    # Main dataset (cleaned and preprocessed)
+├── full_format_recipes.json      # Original dataset with detailed recipe info
 │
 ├── notebook.ipynb                # Jupyter notebook
 │
-├── Tableau/
-│   └── Recipe_Analysis.twb       # Tableau Dashboard file
+├── Dashboard.twb                 # Tableau Dashboard file
 │
 ├── README.md                     # Project Overview (This File)
 └── LICENSE                       # License Information
