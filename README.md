@@ -2,6 +2,13 @@
 
 This project is designed to showcase data cleaning, exploratory data analysis (EDA), and a recommendation system using the **EpiRecipes dataset** sourced from [Kaggle](https://www.kaggle.com/datasets/hugodarwood/epirecipes ). The focus of the project is to derive actionable insights and provide visual storytelling with the help of Tableau and a video presentation.
 
+## Video Explanation
+
+For a detailed walkthrough of the project, including the methodology, insights, and visualizations, click the image below to watch the video:
+
+[![Watch the video](http://img.youtube.com/vi/nTW0CzUH6-o/0.jpg)](https://youtu.be/nTW0CzUH6-o?si=4c2i3l_MmVjmXMm6)
+
+
 ## Table of Contents
 
 1. [Objective](#objective)
@@ -12,10 +19,9 @@ This project is designed to showcase data cleaning, exploratory data analysis (E
     - Task 2: Exploratory Data Analysis (EDA)
     - Task 3: Recommendation System
 5. [Tableau Dashboard](#tableau-dashboard)
-6. [Video Explanation](#video-explanation)
-7. [Results and Insights](#results-and-insights)
-8. [Conclusion](#conclusion)
-9. [Installation and Usage](#installation-and-usage)
+6. [Results and Insights](#results-and-insights)
+7. [Conclusion](#conclusion)
+8. [Installation and Usage](#installation-and-usage)
 
 ---
 
@@ -93,12 +99,6 @@ I have created a Tableau Dashboard to visualize key insights from the dataset. T
 - Nutritional content distributions.
 - Seasonal recipes.
 - Meal-type trends.
-
----
-
-## Video Explanation
-
-For a detailed walkthrough of the project, including the methodology, insights, and visualizations, you can watch my video explanation [here](https://youtu.be/nTW0CzUH6-o?si=4c2i3l_MmVjmXMm6).
 
 ---
 
